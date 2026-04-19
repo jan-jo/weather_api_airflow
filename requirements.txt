@@ -1,0 +1,18 @@
+# Weather ETL Pipeline — Python Dependencies
+
+# --- Apache Airflow core ---
+apache-airflow==2.8.1
+
+# Airflow providers (used in weather_dag.py) ---
+apache-airflow-providers-http==4.10.0       # HttpSensor, SimpleHttpOperator
+apache-airflow-providers-amazon==8.15.0     # S3 hooks & operators
+
+#AWS SDK (used by pandas to write directly to S3) 
+boto3==1.34.34
+s3fs==2024.2.0                              # required for pandas df.to_csv("s3://...")
+
+# Data processing (used in transform_load_data)
+pandas==2.2.0
+
+# Environment & config 
+python-dotenv==1.0.0
